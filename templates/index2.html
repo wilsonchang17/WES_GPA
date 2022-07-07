@@ -1,0 +1,46 @@
+
+<head>
+    <title>WES GPA</title>
+    <meta charset="utf-8">
+    <meta name = "description" content = "WES GPA">
+    <meta name = "author" content = "Wilson Chang">
+    <link rel="stylesheet" href="static/index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <link href="static/index.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 701px)" />
+	<link href="static/index.css" rel="stylesheet" type="text/css" media="only screen and (max-width: 700px)" />	
+</head>
+<body class = "center">
+    <div class = "out">
+        <div class="topnav">
+            <a href="{{  url_for('my_form')  }}">計算</a>
+            <a href="{{  url_for('my_form2')  }}">如何使用</a>
+            <div class="topnav-right" >
+                <a href="https://sys.ndhu.edu.tw/CTE/Ed_StudP_WebSite/Login.aspx">點我去電子履歷</a>
+            </div>
+        </div>
+        <form method="POST">
+            <p style = "font-size: 4vmin; font-weight: 800;">使用說明</p>
+            <p class = "use2"><strong>Student ID & Password</strong><br>請輸入電子學習履歷系統帳號密碼<br><strong style="color: #eb6060;">本網站絕對不會儲存你的帳號密碼個人訊息，不用擔心盜用</strong>
+            <br>若還有資安疑慮可以去我的 <a href="https://github.com/wilsonchang17/WES_GPA"> github</a> clone下來本地端使用
+            <br><br><strong>程式流程</strong><br>1. 根據輸入的帳號密碼來登入電子履歷(帳號密碼只會用在這裡) 
+            <br>2. 登入之後從歷年總成績中抓取成績資料
+            <br>3. 將成績資料計算並回傳本網站顯示
+            <br><br><strong>Overall GPA</strong><br>以WES的標準轉換4.5 Scale的GPA到4.0的Scale
+            <br>只會計算A+ ~ E的學分，不會計算S，W，操行成績....
+            <br><br><strong>Last60 GPA</strong><br>將計算最後60學分(±2)，以4.0的Scale呈現
+            <br><br><strong>Overall GPA 和 Last60 GPA 都有很多種不同算法<br>請根據自己需要的算法斟酌參考</strong></p>  
+    
+        </form>
+        <br>
+        <br>
+    </div>
+    <div class = "footer" >
+        <a href="https://www.facebook.com/profile.php?id=100007509667977"><i class="fab fa-facebook fa-3x" style="color: rgb(0, 0, 0);"></a></i>
+        &emsp;
+        &emsp;
+        <a href="https://github.com/wilsonchang17"><i class="fab fa-github fa-3x" style="color: rgb(0, 0, 0);"></a></i>
+        <br><br>
+        <font style="font-size: 2vmin;color: #2a2d30;">Copyright © 2022 Wilson Chang, All Rights Reserved.</font>
+    </div>
+</body>
+</html>

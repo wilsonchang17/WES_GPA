@@ -1,0 +1,54 @@
+
+<head>
+    <title>WES GPA</title>
+    <meta charset="utf-8">
+    <meta name = "description" content = "WES GPA">
+    <meta name = "author" content = "Wilson Chang">
+    <link rel="stylesheet" href="static/index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</head>
+<body class = "center">
+    <div class = "out">
+        <div class="topnav">
+            <a href="{{  url_for('my_form')  }}">計算</a>
+            <a href="{{  url_for('my_form2')  }}">如何使用</a>
+            <div class="topnav-right">
+                <a href="https://sys.ndhu.edu.tw/CTE/Ed_StudP_WebSite/Login.aspx">點我去電子履歷</a>
+            </div>
+        </div>
+        <form method="POST">
+            <p style = "font-size: 3.5vmin; font-weight: 800;">輸入電子履歷帳號密碼</p>
+            <p class = "word" style="display:inline">Student ID&ensp;&ensp;</p> 
+            <input class = bloc3 name="idd" style="text-align:center;"placeholder="帳號">
+            <br>
+            <br>
+            <p class = "word"style="display:inline">Password &ensp;&ensp;</p>
+            <input class = bloc3 name="pas" style="text-align:center;"placeholder="密碼">    
+            <br>
+            <br>
+            <input class = bloc2 type="submit" value="Submit">
+            <br><br><strong>修但，讓他跑一下</strong>
+            <br>
+            <br>
+            <br>
+            <div class="border">
+                <p class = "word2">Overall GPA:  {{gpa}}</p>
+                <p class = "word2">Last60 GPA:  {{last60}}</p>
+            </div>
+            <br>
+            <p class = "use2"><strong>課程學分與成績</strong><br>
+            <div style="font-size: 2vmin">
+            {%for l in all%}
+                {{l}}
+                <br>
+            {%endfor%}
+            <div></div>    
+        </form>
+        <br>
+
+        <br>
+        <br>
+    </div>
+
+</body>
+</html>

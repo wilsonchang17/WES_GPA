@@ -7,7 +7,6 @@ import time
 class getgpa:
     def apply(self,id, passwordd):
         #heroku的chrome driver
-        
         GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
         CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
         chrome_options = webdriver.ChromeOptions()
@@ -46,13 +45,20 @@ class getgpa:
             print("登入失敗")
             return(0,0,[])
         #登入
-        print("4")
-        browser.find_element_by_xpath('//*[@id="ContentPlaceHolder1_imgbtnLogin"]').click()
-        time.sleep(1.2)
-        browser.find_element_by_xpath('/html/body/form[2]/div[4]/div/ul/li[3]/a').click()
-        time.sleep(1.2)
-        window_after = browser.window_handles[1]
-        browser.switch_to_window(window_after)
+        try:
+            print("4")
+            browser.find_element_by_xpath('//*[@id="ContentPlaceHolder1_imgbtnLogin"]').click()
+            time.sleep(1.2)
+            browser.find_element_by_xpath('/html/body/form[2]/div[4]/div/ul/li[3]/a').click()
+            time.sleep(1.2)
+            window_after = browser.window_handles[1]
+            time.sleep(1)
+            browser.switch_to_window(window_after)
+        except:
+            browser.close()
+            browser.quit()
+            print("卡住")
+            return("可能一次太多人用，卡住了QQ","再試一次",[])
         print("5")
         time.sleep(0.5)
         try:
@@ -112,6 +118,7 @@ class getgpa:
         print("10")
         browser.close()
         browser.quit()
+        print("成功")
         return(round(gp/credit,2),round(last60gp/last60credits,2),zipped_list)
 
         

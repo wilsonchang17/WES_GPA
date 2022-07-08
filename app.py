@@ -5,6 +5,7 @@ from gpa import getgpa
 
 
 usergpa  = getgpa()
+
 app=Flask(__name__)
 
 @app.route('/')
@@ -17,7 +18,6 @@ def my_form_post():
         id = request.form['idd']
         password = request.form['pas']
         (Overrallgpa ,last60gpa, l) =  usergpa.apply(id, password)
-        print("成功")
         return render_template('index.html', gpa = Overrallgpa, last60 = last60gpa, all = l)
     except Exception as e: 
         result = "輸入資料有誤"

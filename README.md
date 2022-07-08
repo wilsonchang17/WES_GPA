@@ -1,4 +1,4 @@
-# 幫助東華的學生將學校4.5 Scale的GPA轉換為4.0 的Scale
+# 幫助東華的學生將學校4.5 Scale的GPA轉換為 4.0 的Scale
 ## 本地端使用方法如下
 - 先把這個repo clone下來
 ```

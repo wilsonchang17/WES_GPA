@@ -5,7 +5,6 @@ from gpa import getgpa
 
 
 usergpa  = getgpa()
-
 app=Flask(__name__)
 
 @app.route('/')
